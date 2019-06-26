@@ -1,0 +1,40 @@
+服务地址
+    129.28.187.206
+* 安装koa脚手架
+    npm i -g koa-generator  
+    创建项目
+    koa2 project-name
+    启动项目
+    npm run dev
+    打开项目
+    localhost:3000
+
+* 通过curl的post传参
+    curl -d 'name=lilei&age=19' http://localhost:3000/users/addPerson   
+
+* 安装redise
+    cnpm i koa-generic-session koa-redis --save
+
+* redis 远程连接方法
+    1、修改redis服务器的配置文件
+    vi redis.conf
+    注释以下绑定的主机地址
+    # bind 127.0.0.1
+    或
+    vim  redis.conf
+    bind  0.0.0.0
+    protected-mode   no
+
+    !!!!坑  修改配置文件启动时，记得指定配置文件
+    redis-server ./redis.conf
+    远程连接：
+    redis-cli -h 129.28.187.206 -p 6379
+
+    命令：
+    keys *          :反馈存储的所有key值
+    get key值       :获取指定key的数据
+    hget fix name   :不经过sesson读取redis
+    
+
+
+* Nuxt.js
