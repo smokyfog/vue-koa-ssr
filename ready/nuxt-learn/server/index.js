@@ -1,6 +1,7 @@
 const Koa = require('koa')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const cityInterface = require('./interface/city')
 
 const app = new Koa()
 
@@ -25,6 +26,8 @@ async function start() {
     await nuxt.ready()
   }
 
+
+  app.use(cityInterface.routes()).use(cityInterface.allowedMethods())
   app.use((ctx) => {
     ctx.status = 200
     ctx.respond = false // Bypass Koa's built-in response handling

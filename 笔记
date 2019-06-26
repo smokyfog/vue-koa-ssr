@@ -38,3 +38,38 @@
 
 
 * Nuxt.js
+    #   npx create-nuxt-app <项目名>
+
+    #   export default{
+            layout:'search' //选择渲染的摸板 
+        }
+    
+    #   asyncData和fetch都会获取异步数据
+        asyncData用于处理组件的数据
+        fetch用于处理vuex的数据
+
+    !!坑
+    !    引用vuex的时候聚合不用，
+        const store = () => new Vuex.store({
+            modules:{
+                city,
+                navbar
+            },
+            actions: {
+
+            }
+        })
+        
+    !    store返回的不能再是一个函数
+        报错：Classic mode for store/ is deprecated and will be removed in Nuxt 3
+        
+    !    而是采用：
+        const store = {
+            modules:{
+                city,
+                navbar
+            },
+            actions: {
+
+            }
+        }
