@@ -73,3 +73,19 @@
 
             }
         }
+
+    #若想在server里面使用es6的语法，应该在pageage.json里面修改 加上参数 -exec babel-node
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server --exec babel-node",
+    "start": "cross-env NODE_ENV=production node server/index.js --exec babel-node",
+    并且
+    安装：yarn add babel-core babel-preset-es2015 babel-cli
+    在工程目录下创建 .babelrc 文件：
+    {
+        "presets":["es2015"]
+    }
+    
+
+
+    windows杀死某端口进程
+    查看端口的占用： netstat -ano
+    杀死进程 taskkill /pid 4200

@@ -12,7 +12,11 @@ const store = {
     navbar
   },
   actions: {
-
+    nuxtServerInit ({ commit }, { req }) {
+      if (req.session.user) {
+        commit('city', req.session.user)
+      }
+    }
   }
 }
 
