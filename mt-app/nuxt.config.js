@@ -39,7 +39,6 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/eslint-module'
   ],
   /*
   ** Axios module configuration
@@ -56,7 +55,6 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-    },
-    catch: true
+    }
   }
 }

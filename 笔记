@@ -1,5 +1,9 @@
 服务地址
     129.28.187.206
+
+
+    
+    
 * 安装koa脚手架
     npm i -g koa-generator  
     创建项目
@@ -89,3 +93,10 @@
     windows杀死某端口进程
     查看端口的占用： netstat -ano
     杀死进程 taskkill /pid 4200
+
+    mysql   Uqa3SHoIva(R
+            yqzhenshuai
+            开启
+            systemctl start  mysqld.service
+            查看状态
+            systemctl status mysqld.service

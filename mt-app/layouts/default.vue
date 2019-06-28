@@ -1,6 +1,6 @@
 <template>
-  <el-container>
-    <el-header>
+  <el-container class="layout-default">
+    <el-header height="197px">
       <my-header />
     </el-header>
     <el-main>
@@ -15,7 +15,7 @@
 <script>
 import MyHeader from "@/components/public/header/index.vue"
 export default {
-  comments:{
+  components:{
     MyHeader
   }
 }
