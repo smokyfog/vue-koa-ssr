@@ -5,11 +5,11 @@
             [<nuxt-link to="/exit">退出</nuxt-link>]
         </template>
         <template v-else>
-            <nuxt-link 
-                to="/login" 
+            <nuxt-link
+                to="/login"
                 class="login">立即登录</nuxt-link>
-            <nuxt-link 
-                to="/register" 
+            <nuxt-link
+                to="/register"
                 class="register">注册</nuxt-link>
         </template>
     </div>
@@ -26,5 +26,5 @@ export default {
 </script>
 
 <style lang="scss">
-    
+
 </style>
