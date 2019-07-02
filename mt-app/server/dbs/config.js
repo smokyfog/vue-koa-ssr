@@ -13,7 +13,20 @@ export default {
       return "smtp.qq.com"
     },
     get user(){
-
+      return '2472922839@qq.com'
+    },
+    get pass(){
+      return 'oafgmdnllleaebhi'
+    },
+    get code(){
+      return ()=>{
+        return Math.random().toString(16).slice(2,6).toUpperCase()
+      }
+    },
+    get expire(){
+      return ()=>{
+        return new Date().getTime()+60*60*1000
+      }
     }
   }
 }
