@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 const UserSchema=new Schema({
   username:{
     type:String,
-    unique:true,
-    require:true,
+    unique:true,  //唯一的
+    require:true, //必须的
   },
   password:{
     type:String,

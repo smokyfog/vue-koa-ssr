@@ -72,6 +72,7 @@
 
 
 <script>
+import CryptoJS from 'crypto-js'
 export default {
   layout:'blank',
   data() {
@@ -113,6 +114,7 @@ export default {
     }
   },
   methods: {
+    //发送验证码
     sendMsg:function(){
       const self = this;
       let namePass
@@ -121,7 +123,7 @@ export default {
         return false
       }
       this.$refs['ruleForm'].validateField('name', (valid) => {
-        namePass =valid
+        namePass = valid
       })
       self.statusMsg=''
       if(namePass){
@@ -150,8 +152,32 @@ export default {
         })
       }
     },
+    //注册
     register:function(){
-
+      let self = this;
+      this.$refs['ruleForm'].validate((valid)=>{
+        if(valid){
+          self.$axios.post('/users/signup',{
+            username:window.encodeURIComponent(self.ruleForm.name),
+            password:CryptoJS.MD5(self.ruleForm.pwd).toString(),
+            email:self.ruleForm.email,
+            code:self.ruleForm.code
+          }).then(({status,data})=>{
+            if(status===200){
+              if(data&&data.code===0){
+                location.href='/login'
+              }else{
+                self.error=data.msg
+              }
+            }else{
+              self.error=`服务器出错，错误码: ${status}`
+            }
+            setTimeout(()=>{
+              self.error=''
+            },1500)
+          })
+        }
+      })
     }
   },
 }
