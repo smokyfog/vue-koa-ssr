@@ -19,6 +19,7 @@ void (function updateModules() {
   store.modules = store.modules || {}
 
   resolveStoreModules(require('..\\store\\modules\\geo.js'), 'modules/geo.js')
+  resolveStoreModules(require('..\\store\\modules\\home.js'), 'modules/home.js')
 
   // If the environment supports hot reloading...
 
@@ -27,6 +28,7 @@ void (function updateModules() {
     module.hot.accept([
       '..\\store\\index.js',
       '..\\store\\modules\\geo.js',
+      '..\\store\\modules\\home.js',
     ], () => {
       // Update `root.modules` with the latest definitions.
       updateModules()
