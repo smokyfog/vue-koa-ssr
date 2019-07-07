@@ -1,5 +1,6 @@
 import Router from 'koa-router';
 import axios from './utils/axios';
+import Province from '../dbs/models/province'
 
 let router = new Router({prefix:'/geo'})
 
@@ -28,17 +29,17 @@ router.get('/getPosition', async (ctx) => {
 })
 
 
-// router.get('province', async (ctx) => {
-//   let province = await Province.find()
-//   ctx.body = {
-//     province: province.map(item => {
-//       return {
-//         id: item.id,
-//         name: item.value[0]
-//       }
-//     })
-//   }
-// })
+router.get('/province', async (ctx) => {
+  let province = await Province.find()
+  ctx.body = {
+    province: province.map(item => {
+      return {
+        id: item.id,
+        name: item.value[0]
+      }
+    })
+  }
+})
 
 // router.get('/province/:id', async (ctx) => {
 //   let city = await city.findOne({id: ctx.params.id})

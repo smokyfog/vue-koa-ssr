@@ -2,10 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
-const _63c89390 = () => interopDefault(import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */))
-const _0311b9e7 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */))
-const _2bbc7cd6 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */))
-const _396a16d0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _ffeb10a0 = () => interopDefault(import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */))
+const _6f0c59c7 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */))
+const _e6d6d496 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */))
+const _b53692a0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
 
 Vue.use(Router)
 
@@ -83,19 +83,19 @@ export function createRouter() {
 
     routes: [{
       path: "/exit",
-      component: _63c89390,
+      component: _ffeb10a0,
       name: "exit"
     }, {
       path: "/login",
-      component: _0311b9e7,
+      component: _6f0c59c7,
       name: "login"
     }, {
       path: "/register",
-      component: _2bbc7cd6,
+      component: _e6d6d496,
       name: "register"
     }, {
       path: "/",
-      component: _396a16d0,
+      component: _b53692a0,
       name: "index"
     }],
 
