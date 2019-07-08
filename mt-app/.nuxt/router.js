@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { interopDefault } from './utils'
 
+const _a0b0e466 = () => interopDefault(import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */))
 const _ffeb10a0 = () => interopDefault(import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */))
 const _6f0c59c7 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */))
 const _e6d6d496 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */))
@@ -82,6 +83,10 @@ export function createRouter() {
     scrollBehavior,
 
     routes: [{
+      path: "/changeCity",
+      component: _a0b0e466,
+      name: "changeCity"
+    }, {
       path: "/exit",
       component: _ffeb10a0,
       name: "exit"

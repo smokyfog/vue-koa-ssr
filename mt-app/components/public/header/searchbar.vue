@@ -23,7 +23,8 @@
             class="hotPlace"
             v-if="isHotPlace">
             <dt>热门搜索</dt>
-            <dd v-for="(item,idx) in hotPlace" :key="idx">{{item}}</dd>
+            <dd v-for="(item,idx) in $store.state.home.hotPlace"
+              :key="idx">{{item.name.slice(0,5)}}</dd>
           </dl>
           <dl
             class="searchList"
@@ -32,11 +33,8 @@
           </dl>
         </div>
         <p class="suggest">
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
-          <a href="#">故宫博物院</a>
+          <a href="#"  v-for="(item,idx) in $store.state.home.hotPlace"
+              :key="idx">{{item.name.slice(0,5)}}</a>
         </p>
         <ul class="nav">
           <li><nuxt-link
@@ -76,7 +74,7 @@ export default {
     return {
       search:'',
       isFocus:false,
-      hotPlace:["火锅","火锅","火锅","火锅","火锅","火锅"],
+      hotPlace:[],
       searchList:["故宫","故宫","火锅","故宫","故宫","火锅"]
     }
   },
