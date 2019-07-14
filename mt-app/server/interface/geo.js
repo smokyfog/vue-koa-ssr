@@ -34,17 +34,13 @@ router.get('/province', async (ctx) => {
   let province = await Province.find()
   ctx.body = {
     province: province.map(item => {
-      return {
-        id: item.id,
-        name: item.value[0]
-      }
+      return item
     })
   }
 })
 
 router.get('/province/:id', async (ctx) => {
-  let city = await city.findOne({id: ctx.params.id})
-
+  let city = await City.findOne({id: ctx.params.id})
   ctx.body = {
     code: 0,
     city:city.value.map(item => {
@@ -93,10 +89,10 @@ router.get('/hotcity', async (ctx) => {
   let result = await City.find()
   let nList = []
   result.forEach(item => {
-    // nList = nList.concat(item.value.filter(k => list.includes(k.name))) //不全
+    nList = nList.concat(item.value.filter(k => list.includes(k.name))) //不全
   })
   ctx.body = {
-    hosts : nList
+    hots : nList
   }
 })
 
