@@ -4,8 +4,6 @@ import Poi from '../dbs/models/poi'
 
 let router = new Router({prefix:'/search'})
 
-const sign = 'abc'
-
 router.get('/top',async (ctx) => {
   let list = [{
       "name":'李文正宗麻辣火锅鸡鱼',
