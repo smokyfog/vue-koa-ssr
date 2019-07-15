@@ -1,19 +1,8 @@
-
 export default {
-  name: 'NuxtChild',
+  name: 'nuxt-child',
   functional: true,
-  props: {
-    nuxtChildKey: {
-      type: String,
-      default: ''
-    },
-    keepAlive: Boolean,
-    keepAliveProps: {
-      type: Object,
-      default: undefined
-    }
-  },
-  render(h, { parent, data, props }) {
+  props: ['keepAlive'],
+  render (h, { parent, data, props }) {
     data.nuxtChild = true
     const _parent = parent
     const transitions = parent.$nuxt.nuxt.transitions
@@ -28,21 +17,20 @@ export default {
     }
     data.nuxtChildDepth = depth
     const transition = transitions[depth] || defaultTransition
-    const transitionProps = {}
+    let transitionProps = {}
     transitionsKeys.forEach((key) => {
       if (typeof transition[key] !== 'undefined') {
         transitionProps[key] = transition[key]
       }
     })
-
-    const listeners = {}
+    let listeners = {}
     listenersKeys.forEach((key) => {
       if (typeof transition[key] === 'function') {
         listeners[key] = transition[key].bind(_parent)
       }
     })
     // Add triggerScroll event on beforeEnter (fix #1376)
-    const beforeEnter = listeners.beforeEnter
+    let beforeEnter = listeners.beforeEnter
     listeners.beforeEnter = (el) => {
       // Ensure to trigger scroll event after calling scrollBehavior
       window.$nuxt.$nextTick(() => {
@@ -54,9 +42,9 @@ export default {
     let routerView = [
       h('router-view', data)
     ]
-    if (props.keepAlive) {
+    if (typeof props.keepAlive !== 'undefined') {
       routerView = [
-        h('keep-alive', { props: props.keepAliveProps }, routerView)
+        h('keep-alive', routerView)
       ]
     }
     return h('transition', {

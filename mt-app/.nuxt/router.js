@@ -1,45 +1,29 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { interopDefault } from './utils'
 
-const _a0b0e466 = () => interopDefault(import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */))
-const _ffeb10a0 = () => interopDefault(import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */))
-const _6f0c59c7 = () => interopDefault(import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */))
-const _e6d6d496 = () => interopDefault(import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */))
-const _b53692a0 = () => interopDefault(import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */))
+const _8f322892 = () => import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */).then(m => m.default || m)
+const _785f9305 = () => import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */).then(m => m.default || m)
+const _5a27c29c = () => import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */).then(m => m.default || m)
+const _303c6b4f = () => import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */).then(m => m.default || m)
+const _5bb545f8 = () => import('..\\pages\\products.vue' /* webpackChunkName: "pages_products" */).then(m => m.default || m)
+const _a2902024 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 Vue.use(Router)
 
+
 if (process.client) {
-  if ('scrollRestoration' in window.history) {
-    window.history.scrollRestoration = 'manual'
-
-    // reset scrollRestoration to auto when leaving page, allowing page reload
-    // and back-navigation from other pages to use the browser to restore the
-    // scrolling position.
-    window.addEventListener('beforeunload', () => {
-      window.history.scrollRestoration = 'auto'
-    })
-
-    // Setting scrollRestoration to manual again when returning to this page.
-    window.addEventListener('load', () => {
-      window.history.scrollRestoration = 'manual'
-    })
-  }
+  window.history.scrollRestoration = 'manual'
 }
 const scrollBehavior = function (to, from, savedPosition) {
   // if the returned position is falsy or an empty object,
   // will retain current scroll position.
   let position = false
 
-  // if no children detected and scrollToTop is not explicitly disabled
-  if (
-    to.matched.length < 2 &&
-    to.matched.every(r => r.components.default.options.scrollToTop !== false)
-  ) {
+  // if no children detected
+  if (to.matched.length < 2) {
     // scroll to the top of the page
     position = { x: 0, y: 0 }
-  } else if (to.matched.some(r => r.components.default.options.scrollToTop)) {
+  } else if (to.matched.some((r) => r.components.default.options.scrollToTop)) {
     // if one of the children has scrollToTop option set to true
     position = { x: 0, y: 0 }
   }
@@ -74,36 +58,48 @@ const scrollBehavior = function (to, from, savedPosition) {
   })
 }
 
-export function createRouter() {
+
+export function createRouter () {
   return new Router({
     mode: 'history',
-    base: decodeURI('/'),
+    base: '/',
     linkActiveClass: 'nuxt-link-active',
     linkExactActiveClass: 'nuxt-link-exact-active',
     scrollBehavior,
-
-    routes: [{
-      path: "/changeCity",
-      component: _a0b0e466,
-      name: "changeCity"
-    }, {
-      path: "/exit",
-      component: _ffeb10a0,
-      name: "exit"
-    }, {
-      path: "/login",
-      component: _6f0c59c7,
-      name: "login"
-    }, {
-      path: "/register",
-      component: _e6d6d496,
-      name: "register"
-    }, {
-      path: "/",
-      component: _b53692a0,
-      name: "index"
-    }],
-
+    routes: [
+		{
+			path: "/register",
+			component: _8f322892,
+			name: "register"
+		},
+		{
+			path: "/login",
+			component: _785f9305,
+			name: "login"
+		},
+		{
+			path: "/exit",
+			component: _5a27c29c,
+			name: "exit"
+		},
+		{
+			path: "/changeCity",
+			component: _303c6b4f,
+			name: "changeCity"
+		},
+		{
+			path: "/products",
+			component: _5bb545f8,
+			name: "products"
+		},
+		{
+			path: "/",
+			component: _a2902024,
+			name: "index"
+		}
+    ],
+    
+    
     fallback: false
   })
 }
