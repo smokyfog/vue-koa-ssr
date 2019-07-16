@@ -36,7 +36,7 @@ export default {
       types:[],
       areas:[],
       keyword:'',
-      point:[]
+      point:[116.40,39.90]
     }
   },
   async asyncData(ctx){
@@ -48,34 +48,34 @@ export default {
         city
       }
     })
-  //   let {status:status2,data:{areas,types}} = await ctx.$axios.get('/categroy/crumbs',{
-  //     params:{
-  //       city
-  //     }
-  //   })
-  //   if(status===200&&count>0&&status2===200){
-  //     return {
-  //       list: pois.filter(item=>item.photos.length).map(item=>{
-  //         return {
-  //           type: item.type,
-  //           img: item.photos[0].url,
-  //           name: item.name,
-  //           comment: Math.floor(Math.random()*10000),
-  //           rate: Number(item.biz_ext.rating),
-  //           price: Number(item.biz_ext.cost),
-  //           scene: item.tag,
-  //           tel: item.tel,
-  //           status: '可订明日',
-  //           location: item.location,
-  //           module: item.type.split(';')[0]
-  //         }
-  //       }),
-  //       keyword,
-  //       areas: areas.filter(item=>item.type!=='').slice(0,5),
-  //       types: types.filter(item=>item.type!=='').slice(0,5),
-  //       point: (pois.find(item=>item.location).location||'').split(',')
-  //     }
-  //   }
+    let {status:status2,data:{areas,types}} = await ctx.$axios.get('/categroy/crumbs',{
+      params:{
+        city
+      }
+    })
+    if(status===200&&count>0&&status2===200){
+      return {
+        list: pois.filter(item=>item.photos.length).map(item=>{
+          return {
+            type: item.type,
+            img: item.photos[0].url,
+            name: item.name,
+            comment: Math.floor(Math.random()*10000),
+            rate: Number(item.biz_ext.rating),
+            price: Number(item.biz_ext.cost),
+            scene: item.tag,
+            tel: item.tel,
+            status: '可订明日',
+            location: item.url,
+            module: item.type.split(';')[0]
+          }
+        }),
+        keyword,
+        areas: areas.filter(item=>item.type!=='').slice(0,5),
+        types: types.filter(item=>item.type!=='').slice(0,5),
+        // point: (pois.find(item=>item.url).url||'').split(',')
+      }
+    }
   }
 }
 </script>
