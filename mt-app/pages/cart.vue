@@ -1,18 +1,23 @@
 <template>
   <div class="page-cart">
     <el-row>
-      <el-col 
+      <el-col
         v-if="cart.length"
         :span="24"
-        class="m-cart"
-      >
-        <list />
+        class="m-cart">
+        <list :cart-data="cart"/>
+        <p>
+          应付金额：<em class="money">￥{{ total }}</em>
+        </p>
+        <div class="post">
+          <el-button
+            type="primary"
+          >提交订单</el-button>
+        </div>
       </el-col>
-      <el-col 
+      <el-col
         v-else
-        :span="24"
-        class="empty"
-      >购物车为空</el-col>
+        class="empty">购物车为空</el-col>
     </el-row>
   </div>
 </template>
@@ -25,9 +30,18 @@ export default {
   },
   data() {
     return {
-      cart: ['1']
+      cart: []
     }
-  }
+  },
+  computed:{
+    total(){
+      let total=0;
+      this.cart.forEach(item=>{
+        total+=item.price*item.count
+      })
+      return total
+    }
+  },
 }
 </script>
 

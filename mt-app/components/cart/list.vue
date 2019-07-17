@@ -1,38 +1,34 @@
 <template>
     <el-table
-      :data="tableData"
+      :data="cartData"
       style="width: 980px">
       <el-table-column
-      label="日期"
-      width="180">
-      <template slot-scope="scope">
-        <i class="el-icon-time"></i>
-        <span style="margin-left: 10px">{{ scope.row.date }}</span>
-      </template>
+        prop="name"
+        label="项目"
+        width="532">
       </el-table-column>
       <el-table-column
-      label="姓名"
-      width="180">
-      <template slot-scope="scope">
-        <el-popover trigger="hover" placement="top">
-        <p>姓名: {{ scope.row.name }}</p>
-        <p>住址: {{ scope.row.address }}</p>
-        <div slot="reference" class="name-wrapper">
-            <el-tag size="medium">{{ scope.row.name }}</el-tag>
-        </div>
-        </el-popover>
-      </template>
+        prop="price"
+        label="单价"
+        width="132">
       </el-table-column>
-      <el-table-column label="操作">
-      <template slot-scope="scope">
-        <el-button
-        size="mini"
-        @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-        <el-button
-        size="mini"
-        type="danger"
-        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
-      </template>
+      <el-table-column
+        label="数量"
+        width="212">
+        <template slot-scope="scope">
+          <el-input-number 
+            v-model="scope.row.count" 
+            @change="handleChange" 
+            :min="0" 
+          />
+        </template>
+      </el-table-column>
+      <el-table-column label="总价">
+        <template slot-scope="scope">
+          <div class="">
+            {{ scope.row.price*scope.row.count }}
+          </div>
+        </template>
       </el-table-column>
     </el-table>
 </template>
@@ -41,25 +37,21 @@
 export default {
     data() {
       return {
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
-        }]
+        // cartData: [{
+        //   name: '王小虎',
+        //   price: 180,
+        //   count: 3
+        // }]
       }
     },
+    props: {
+      cartData:{
+        type:Array,
+        default: () => {
+           return []
+        }
+      }
+    }
 }
 </script>
 
