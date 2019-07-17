@@ -42,6 +42,11 @@ export default {
       return total
     }
   },
+  methods: {
+    submit(){
+
+    }
+  },
 }
 </script>
 
