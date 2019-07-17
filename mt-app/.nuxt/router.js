@@ -4,6 +4,7 @@ import Router from 'vue-router'
 const _8f322892 = () => import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */).then(m => m.default || m)
 const _785f9305 = () => import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */).then(m => m.default || m)
 const _5a27c29c = () => import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */).then(m => m.default || m)
+const _51d60fb4 = () => import('..\\pages\\cart.vue' /* webpackChunkName: "pages_cart" */).then(m => m.default || m)
 const _303c6b4f = () => import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */).then(m => m.default || m)
 const _5bb545f8 = () => import('..\\pages\\products.vue' /* webpackChunkName: "pages_products" */).then(m => m.default || m)
 const _a2902024 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
@@ -81,6 +82,11 @@ export function createRouter () {
 			path: "/exit",
 			component: _5a27c29c,
 			name: "exit"
+		},
+		{
+			path: "/cart",
+			component: _51d60fb4,
+			name: "cart"
 		},
 		{
 			path: "/changeCity",

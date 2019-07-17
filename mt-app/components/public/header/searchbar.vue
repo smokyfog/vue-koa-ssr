@@ -20,7 +20,9 @@
             @focus="focus"
             @blur="blur"
             @input="input"/>
-          <button class="el-button el-button--primary"><i class="el-icon-search"></i></button>
+          <nuxt-link to="/products">
+            <button class="el-button el-button--primary"><i class="el-icon-search"></i></button>
+          </nuxt-link>
           <dl
             class="hotPlace"
             v-if="isHotPlace">
