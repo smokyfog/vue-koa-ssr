@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const _e6d6d496 = () => import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */).then(m => m.default || m)
-const _6f0c59c7 = () => import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */).then(m => m.default || m)
-const _ffeb10a0 = () => import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */).then(m => m.default || m)
-const _02172e9c = () => import('..\\pages\\cart.vue' /* webpackChunkName: "pages_cart" */).then(m => m.default || m)
-const _a0b0e466 = () => import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */).then(m => m.default || m)
-const _2fe2eff6 = () => import('..\\pages\\products.vue' /* webpackChunkName: "pages_products" */).then(m => m.default || m)
-const _b53692a0 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
+const _8f322892 = () => import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */).then(m => m.default || m)
+const _70fa9f2c = () => import('..\\pages\\order.vue' /* webpackChunkName: "pages_order" */).then(m => m.default || m)
+const _7ecdc536 = () => import('..\\pages\\detail.vue' /* webpackChunkName: "pages_detail" */).then(m => m.default || m)
+const _51d60fb4 = () => import('..\\pages\\cart.vue' /* webpackChunkName: "pages_cart" */).then(m => m.default || m)
+const _303c6b4f = () => import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */).then(m => m.default || m)
+const _5a27c29c = () => import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */).then(m => m.default || m)
+const _785f9305 = () => import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */).then(m => m.default || m)
+const _5bb545f8 = () => import('..\\pages\\products.vue' /* webpackChunkName: "pages_products" */).then(m => m.default || m)
+const _a2902024 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -70,37 +72,47 @@ export function createRouter () {
     routes: [
 		{
 			path: "/register",
-			component: _e6d6d496,
+			component: _8f322892,
 			name: "register"
 		},
 		{
-			path: "/login",
-			component: _6f0c59c7,
-			name: "login"
+			path: "/order",
+			component: _70fa9f2c,
+			name: "order"
 		},
 		{
-			path: "/exit",
-			component: _ffeb10a0,
-			name: "exit"
+			path: "/detail",
+			component: _7ecdc536,
+			name: "detail"
 		},
 		{
 			path: "/cart",
-			component: _02172e9c,
+			component: _51d60fb4,
 			name: "cart"
 		},
 		{
 			path: "/changeCity",
-			component: _a0b0e466,
+			component: _303c6b4f,
 			name: "changeCity"
 		},
 		{
+			path: "/exit",
+			component: _5a27c29c,
+			name: "exit"
+		},
+		{
+			path: "/login",
+			component: _785f9305,
+			name: "login"
+		},
+		{
 			path: "/products",
-			component: _2fe2eff6,
+			component: _5bb545f8,
 			name: "products"
 		},
 		{
 			path: "/",
-			component: _b53692a0,
+			component: _a2902024,
 			name: "index"
 		}
     ],

@@ -18,7 +18,6 @@
         <template slot-scope="scope">
           <el-input-number 
             v-model="scope.row.count" 
-            @change="handleChange" 
             :min="0" 
           />
         </template>
