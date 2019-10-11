@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-const _8f322892 = () => import('..\\pages\\register.vue' /* webpackChunkName: "pages_register" */).then(m => m.default || m)
-const _70fa9f2c = () => import('..\\pages\\order.vue' /* webpackChunkName: "pages_order" */).then(m => m.default || m)
-const _7ecdc536 = () => import('..\\pages\\detail.vue' /* webpackChunkName: "pages_detail" */).then(m => m.default || m)
-const _51d60fb4 = () => import('..\\pages\\cart.vue' /* webpackChunkName: "pages_cart" */).then(m => m.default || m)
-const _303c6b4f = () => import('..\\pages\\changeCity.vue' /* webpackChunkName: "pages_changeCity" */).then(m => m.default || m)
-const _5a27c29c = () => import('..\\pages\\exit.vue' /* webpackChunkName: "pages_exit" */).then(m => m.default || m)
-const _785f9305 = () => import('..\\pages\\login.vue' /* webpackChunkName: "pages_login" */).then(m => m.default || m)
-const _5bb545f8 = () => import('..\\pages\\products.vue' /* webpackChunkName: "pages_products" */).then(m => m.default || m)
-const _a2902024 = () => import('..\\pages\\index.vue' /* webpackChunkName: "pages_index" */).then(m => m.default || m)
+const _5c67568f = () => import('../pages/cart.vue' /* webpackChunkName: "pages/cart" */).then(m => m.default || m)
+const _7f35e1ea = () => import('../pages/changeCity.vue' /* webpackChunkName: "pages/changeCity" */).then(m => m.default || m)
+const _6bf41980 = () => import('../pages/detail.vue' /* webpackChunkName: "pages/detail" */).then(m => m.default || m)
+const _450534e6 = () => import('../pages/exit.vue' /* webpackChunkName: "pages/exit" */).then(m => m.default || m)
+const _8011b0ec = () => import('../pages/login.vue' /* webpackChunkName: "pages/login" */).then(m => m.default || m)
+const _0f1a44ef = () => import('../pages/order.vue' /* webpackChunkName: "pages/order" */).then(m => m.default || m)
+const _c77cb15a = () => import('../pages/products.vue' /* webpackChunkName: "pages/products" */).then(m => m.default || m)
+const _0e1965dc = () => import('../pages/register.vue' /* webpackChunkName: "pages/register" */).then(m => m.default || m)
+const _1360f71a = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 
 Vue.use(Router)
 
@@ -71,48 +71,48 @@ export function createRouter () {
     scrollBehavior,
     routes: [
 		{
-			path: "/register",
-			component: _8f322892,
-			name: "register"
-		},
-		{
-			path: "/order",
-			component: _70fa9f2c,
-			name: "order"
-		},
-		{
-			path: "/detail",
-			component: _7ecdc536,
-			name: "detail"
-		},
-		{
 			path: "/cart",
-			component: _51d60fb4,
+			component: _5c67568f,
 			name: "cart"
 		},
 		{
 			path: "/changeCity",
-			component: _303c6b4f,
+			component: _7f35e1ea,
 			name: "changeCity"
 		},
 		{
+			path: "/detail",
+			component: _6bf41980,
+			name: "detail"
+		},
+		{
 			path: "/exit",
-			component: _5a27c29c,
+			component: _450534e6,
 			name: "exit"
 		},
 		{
 			path: "/login",
-			component: _785f9305,
+			component: _8011b0ec,
 			name: "login"
 		},
 		{
+			path: "/order",
+			component: _0f1a44ef,
+			name: "order"
+		},
+		{
 			path: "/products",
-			component: _5bb545f8,
+			component: _c77cb15a,
 			name: "products"
 		},
 		{
+			path: "/register",
+			component: _0e1965dc,
+			name: "register"
+		},
+		{
 			path: "/",
-			component: _a2902024,
+			component: _1360f71a,
 			name: "index"
 		}
     ],
