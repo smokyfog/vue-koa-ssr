@@ -11,6 +11,7 @@
 <script>
 import Header from '~/components/layout/header'
 import Footer from '~/components/layout/footer'
+import './element-variables.scss'
 export default {
   components: {
     Header,

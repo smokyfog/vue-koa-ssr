@@ -2,7 +2,7 @@
   <div class="container">
     <div id="banner_box">
       <el-carousel :interval="5000" arrow="always">
-        <el-carousel-item v-for="item in banner" :key="item">
+        <el-carousel-item v-for="item in banner" :key="item.name + new Date().getTime() + item.url">
           <h3>
             <img :src="item.url" alt="">
           </h3>
@@ -13,7 +13,7 @@
       <el-col :span="18">
         <div class="container_left">
           <Hot />
-          <Hot />
+          <Recom />
           <Hot />
         </div>
       </el-col>
@@ -31,6 +31,7 @@
 <script>
 import Hot from '~/components/index/hotRecommended.vue'
 import Link from '~/components/index/friendlyLink.vue'
+import Recom from '~/components/index/Recommended.vue'
 
 export default {
   data() {
@@ -53,7 +54,8 @@ export default {
   },
   components: {
     Hot,
-    Link
+    Link,
+    Recom
   }
 }
 </script>
